@@ -24,7 +24,7 @@ if ch1 == 1
 %% Monte Carlo Generator    
     ch2=input('Press 1 if you want to plot the 3D workspace');
     if ch2 == 1 
-        N = 20000;
+        N = 67312;
         range=input('Enter upper and lower limits of each joint. EXCLUDE ROLL JOINTS');
         lim(N,size(range,1))=0;
         for i=1:size(range,1)
@@ -81,7 +81,7 @@ if ch1 == 1
     title(' Top view');
     xlabel('x (m)');
     ylabel('y (m)');
-    view([1 0 0]); % y-z plane
+    view([0 1 0]); % y-z plane
     title('Side view, Y-Z');
     ylabel('y (m)');
     zlabel('z (m)');

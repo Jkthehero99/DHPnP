@@ -25,7 +25,7 @@ if ch1 == 1
     Tpost = matlabFunction(Tpos);
     var_index = input('Enter variable index: ');
     %elements = input('Enter lower:upper range: ');
-    elements = {0,-1.9:0.5:1.9,-2.8:0.5:2.8,-0.9:0.5:3.14,-4.8:0.5:1.3,-1.6:0.5:1.6,-2.2:0.5:2.2}; %cell array with N vectors to combine
+    elements = {0,0:0.1:3.14,0:0.1:3.14,-3.14:0.1:3.14}; %cell array with N vectors to combine
     combinations = cell(1, numel(elements)); %set up the varargout result
     [combinations{:}] = ndgrid(elements{:});
     combinations = cellfun(@(x) x(:), combinations,'uniformoutput',false); %there may be a better way to do this
@@ -35,7 +35,7 @@ if ch1 == 1
     disp(size(result,1));
     
     for j=1:size(result,1)
-        f(j,:)=Tpost(result(j,1),result(j,2),result(j,3),result(j,4),result(j,5),result(j,6),result(j,7));
+        f(j,:)=Tpost(result(j,1),result(j,2),result(j,3),result(j,4));
     end
     
     disp('Done');
